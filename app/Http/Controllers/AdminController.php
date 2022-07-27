@@ -89,9 +89,41 @@ class AdminController extends Controller
     //dashboard start
     public function show_dashboard()
     {
-       
+        // $total_product = product::where('status',1)->get()->count();
+        // $total_category = category::where('status',1)->get()->count();
+        // $total_sub_category = sub_category::where('status',1)->get()->count();
+        // $total_order = order::get()->count();
+
+        // $revenue = 10;
+        // $purchase = 20;
+        // $expense = 30;
+        // $return = 25;
+        // $purchase_return = 10;
+        // $profit = 10;
+        // $payment_recieved = [41335.40,0.00,0.00,0.00,0.00,857.00,250.00];
+        // $payment_sent = [44750.00,0.00,0.00,0.00,0.00,17000.00,0.00];
+        // $month = ['January','February','March','April','May','November','December'];
+        // $yearly_sale_amount = [10,20,30,40,50,60,70];
+        // $yearly_purchase_amount = [10,20,30,40,50,60,70];
+        // $recent_sale = 10;
+        // $recent_purchase = 15;
+        // $recent_quotation = 10;
+        // $recent_payment = 15;
+        // $best_selling_qty = 20;
+        // $yearly_best_selling_qty = 15;
+        // $yearly_best_selling_price= 10;
+
+
+
+
+
+
+
+
+
+
      //   return view('admin.dashboard.index',compact('total_product','total_category','total_sub_category','total_order'));
-        return view('admin.dashboard.index',);
+        return view('admin.dashboard.index');
 
     }
 

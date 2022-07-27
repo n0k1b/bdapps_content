@@ -5,7 +5,7 @@
 				<div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Edit apps</h4>
+                            <h4>Edit Apps</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -27,9 +27,33 @@
 									<div class="row">
 										<div class="col-lg-12 col-md-12 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">apps Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{ $data->name }}" >
+												<label class="form-label">App Id</label>
+                                                <input type="text" class="form-control" name="app_id" value="{{ $data->app_id }}" >
                                                 <input type="hidden" name='id'  value="{{ $data->id }}">
+											</div>
+										</div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">App Password</label>
+                                                <input type="text" class="form-control" name="app_password" value="{{ $data->app_password }}" >
+                                               
+											</div>
+										</div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">App Name</label>
+                                                <input type="text" class="form-control" name="app_name" value="{{ $data->app_name }}" >
+                                               
+											</div>
+										</div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">App Type</label>
+                                                <input type="text" class="form-control" name="app_type" value="{{ $data->app_type }}" >
+                                              
 											</div>
 										</div>
 

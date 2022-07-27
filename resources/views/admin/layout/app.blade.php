@@ -250,26 +250,7 @@
     <script src="//js.pusher.com/3.1/pusher.min.js"></script>
 
     <script src="{{ asset('public/js/app.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
-    <script>
-
-        var a = Echo.channel('events')
-            .listen('OrderNotification', (e) => {
-                this.toast()
-            });
-
-        function toast(message)
-        {
-
-            iziToast.warning({
-    title: 'Order',
-    message: 'You have new order',
-    close: true,
-    closeOnClick: true,
-     timeout: 0,
-});
-        }
-    </script>
+  
 
     @yield('page_js')
 

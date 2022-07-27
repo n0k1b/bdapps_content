@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subscriber extends Model
+class content extends Model
 {
     use HasFactory;
     protected $guarded = [];
@@ -13,5 +13,4 @@ class Subscriber extends Model
     {
         return $this->belongsTo('App\Models\AppList','app_id','id');
     }
-
 }
