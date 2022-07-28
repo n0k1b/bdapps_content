@@ -18,6 +18,7 @@ use App\Classes\UssdException;
 use App\Classes\Logger;
 use App\Models\content;
 use App\Classes\SMSSender;
+use Auth;
 class AppsController extends Controller
 {
     //
@@ -77,9 +78,9 @@ class AppsController extends Controller
                 {
                    
                     $datas['sl_no'] = $i++;
-                    $datas['ussd_url'] = 'https://proappsbd.com/api/ussd/'.$datas->app_name;
-                    $datas['sms_url'] = 'https://proappsbd.com/api/sms/'.$datas->app_name;
-                    $datas['subscription_notification_url'] = 'https://proappsbd.com/api/subscriptionNotification/'.$datas->app_name;
+                    $datas['ussd_url'] = 'https://bdappspro.com/api/ussd/'.$datas->app_name;
+                    $datas['sms_url'] = 'https://bdappspro.com/api/sms/'.$datas->app_name;
+                    $datas['subscription_notification_url'] = 'https://bdappspro.com/api/subscriptionNotification/'.$datas->app_name;
                     
 
                 }
@@ -92,7 +93,7 @@ class AppsController extends Controller
                         
                         $button = '';
                         $button .= ' <a href="edit_apps_content/'.$data->id.'" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>';
-                        $button .= ' <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="apps_content_delete('.$data->id.')"><i class="la la-trash-o"></i></a>';
+                        $button .= ' <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="app_delete('.$data->id.')"><i class="la la-trash-o"></i></a>';
                         return $button;
                  })
 
@@ -392,7 +393,60 @@ class AppsController extends Controller
         
         //file_put_contents('test.txt',$app_id.' '.$content);
     }
+    public function edit_content(Request $request)
+    {
+        $id = $request->id;
+        $data = content::where('id',$id)->first();
+        return view('admin.content.edit_content',['data'=>$data]);
+    }
     
+    public function update_content(Request $request)
+    {
+        $id = $request->id;
+        content::where('id',$id)->update(['content'=>$request->content]);
+        return redirect()->route('show-all-content')->with('success','Content Added Successfully');
+    }
 
+    public function content_delete(Request $request)
+    {
+        $id = $request->id;
+        content::where('id',$id)->delete();
+    }
+    public function app_delete(Request $request)
+    {
+        $id = $request->id;
+        Subscriber::where('app_id',$id)->delete();
+        AppList::where('id',$id)->delete();
+       
+    }
+    public function index()
+    {
+        if(auth()->check())
+        {
+            return view('admin.dashboard.index');
+        }
+        return view('admin.auth.login');
+    }
+    public function login(Request $request)
+    {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            // file_put_contents('test2.txt',Auth::guard('admin')->user()->name);
+             return redirect('/');
+ 
+          }
+          else
+          {
+             return back()->with('error','Email and Password not match');
+          }
+    }
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->to('/');
+    }
+
+
+    
 
 }

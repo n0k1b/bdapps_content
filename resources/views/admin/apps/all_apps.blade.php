@@ -129,5 +129,25 @@
 
     });
   </script>
-<script src="{{asset('assets')}}/admin/js/admin.js?{{time()}}"></script>
+  <script>
+    function app_delete(id) {
+
+var conf = confirm('Are you sure?');
+
+if (conf == true) {
+    $.ajax({
+        processData: false,
+        contentType: false,
+        type: 'GET',
+        url: 'app_delete/' + id,
+        success: function(data) {
+            alert('Apps Delete Successfully')
+            location.reload();
+
+        }
+    })
+}
+}
+  </script>
+<script src="{{asset('assets')}}/admin/js/admin.js?{{time()}}"></script?>
 @endsection

@@ -150,7 +150,7 @@
                 <div class="col-sm-3">
                   <div class="wrapper count-title text-center">
                     <div class="icon"><i class="dripicons-graph-bar" style="color: #733686"></i></div>
-                    <div class="name"><strong style="color: #733686">Sale</strong></div>
+                    <div class="name"><strong style="color: #733686">Subscriber</strong></div>
                     <div class="count-number revenue-data">{{number_format((float)10, 2, '.', '')}}</div>
                   </div>
                 </div>
@@ -158,7 +158,7 @@
                 <div class="col-sm-3">
                   <div class="wrapper count-title text-center">
                     <div class="icon"><i class="dripicons-return" style="color: #ff8952"></i></div>
-                    <div class="name"><strong style="color: #ff8952">Expense</strong></div>
+                    <div class="name"><strong style="color: #ff8952">Unsubscriber</strong></div>
                     <div class="count-number return-data">{{number_format((float)10, 2, '.', '')}}</div>
                   </div>
                 </div>
@@ -166,18 +166,12 @@
                 <div class="col-sm-3">
                   <div class="wrapper count-title text-center">
                     <div class="icon"><i class="dripicons-media-loop" style="color: #00c689"></i></div>
-                    <div class="name"><strong style="color: #00c689">Order</strong></div>
+                    <div class="name"><strong style="color: #00c689">Pending Charge</strong></div>
                     <div class="count-number purchase_return-data">{{number_format((float)10, 2, '.', '')}}</div>
                   </div>
                 </div>
                 <!-- Count item widget-->
-                <div class="col-sm-3">
-                  <div class="wrapper count-title text-center">
-                    <div class="icon"><i class="dripicons-trophy" style="color: #297ff9"></i></div>
-                    <div class="name"><strong style="color: #297ff9">Profit</strong></div>
-                    <div class="count-number profit-data">{{number_format((float)10, 2, '.', '')}}</div>
-                  </div>
-                </div>
+                
 
 
 

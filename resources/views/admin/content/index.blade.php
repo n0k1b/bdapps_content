@@ -120,5 +120,27 @@
 
     });
   </script>
+<script>
+function content_delete(id) {
+
+var conf = confirm('Are you sure?');
+
+if (conf == true) {
+    $.ajax({
+        processData: false,
+        contentType: false,
+        type: 'GET',
+        url: 'content_delete/' + id,
+        success: function(data) {
+            alert('Content Delete Successfully')
+            location.reload();
+
+        }
+    })
+}
+}
+
+</script>
+  
 <script src="{{asset('assets')}}/admin/js/admin.js?{{time()}}"></script>
 @endsection

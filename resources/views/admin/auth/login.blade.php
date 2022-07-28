@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="cache-control" content="no-cache"/>
     <meta name="description" content="Urrbor Admin">
-    <title>GOGOSHOP </title>
+    <title>Bdapps Content </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('image')}}/logo2.jpg?{{time()}}">
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/style.css?{{time()}}">
+    <link rel="stylesheet" href="{{asset('admin')}}/css/style.css?{{time()}}">
 
 </head>
 
@@ -32,7 +32,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="{{ route('admin_login') }}" method="POST">
+                                    <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>

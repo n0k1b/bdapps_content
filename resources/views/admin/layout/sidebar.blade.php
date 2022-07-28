@@ -4,7 +4,7 @@
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                    
-                <li><a class="ai-icon" href="{{url('admin')}}" aria-expanded="false">
+                <li><a class="ai-icon" href="{{url('/')}}" aria-expanded="false">
                         <i class="la la-bar-chart"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
@@ -18,7 +18,7 @@
 						</a>
 					</li>
              
-                <li><a class="ai-icon" href="{{ route('report') }}" aria-expanded="false">
+                <li><a class="ai-icon" href="{{ route('reports') }}" aria-expanded="false">
                         <i class="la la-bar-chart"></i>
                         <span class="nav-text">Report</span>
                     </a>
@@ -39,7 +39,11 @@
 
                     </ul>
                 </li>
-              
+                <li><a class="ai-icon" href="{{ route('logout') }}" aria-expanded="false">
+                    <i class="la la-bar-chart"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </li>
 
 
 

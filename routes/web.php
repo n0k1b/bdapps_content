@@ -18,7 +18,7 @@ use App\Http\Controllers\AppsController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',[AdminController::class,'show_dashboard']);
+Route::get('/',[AppsController::class,'index']);
 
 
 
@@ -41,7 +41,7 @@ Route::get('show_order_report',[ReportController::class,'show_order_report'])->n
 
 //apps start
 Route::get('show-all-apps',[AppsController::class,'show_all_apps'])->name('show-all-apps');
-Route::get('add-apps',[AppsController::class,'add_apps_ui'])->name('add-apps');
+Route::get('add-apps',[AppsController::class,'add_apps_ui']);
 Route::post('add-apps',[AppsController::class,'add_apps'])->name('add-apps');
 Route::get('edit_apps_content/{id}',[AppsController::class,'edit_apps_content_ui'])->name('edit_apps_content');
 Route::post('update_apps_content',[AppsController::class,'update_apps_content'])->name('update_apps_content');
@@ -51,7 +51,7 @@ Route::get('apps_content_delete/{id}',[AppsController::class,'apps_content_delet
 
 //Report Start
 //Route::view('report','admin.report.date_view');
-Route::get('report',[AppsController::class,'report'])->name('report');
+Route::get('report',[AppsController::class,'report'])->name('reports');
 Route::post('show_subscription_report',[AppsController::class,'show_subscription_report'])->name('show_subscription_report');
 
 //Report End
@@ -68,6 +68,15 @@ Route::get('select_app',[AppsController::class,'select_app'])->name('select_app'
 Route::get('select_app_regular_content',[AppsController::class,'select_app_regular_content'])->name('select_app_regular_content');
 Route::post('app_type_submit',[AppsController::class,'app_type_submit'])->name('app_type_submit');
 Route::post('app_type_submit_regular_content',[AppsController::class,'app_type_submit_regular_content'])->name('app_type_submit_regular_content');
+Route::get('edit_content/{id}',[AppsController::class,'edit_content'])->name('edit_content');
+Route::post('update_content',[AppsController::class,'update_content'])->name('update_content');
+Route::get('content_delete/{id}',[AppsController::class,'content_delete'])->name('content_delete');
+Route::get('app_delete/{id}',[AppsController::class,'app_delete'])->name('app_delete');
+
+
 //content end
 
 
+
+Route::post('admin_login',[AppsController::class,'login'])->name('login');
+Route::get('logout',[AppsController::class,'logout'])->name('logout');
